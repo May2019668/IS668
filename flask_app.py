@@ -53,7 +53,8 @@ class Student(db.Model):
 
     commenter_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
     commenter = db.relationship('User', foreign_keys=commenter_id)
-
+   
+class 
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "GET":
