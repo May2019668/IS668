@@ -46,10 +46,11 @@ class Student(db.Model):
 
     student_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(4096))
-    last_name = db.column(db.String(4096))
-    email_address = db.column(db.String(4096))
-    student_major = db.column(db.String(4096))
-    posted = db.Column(db.DateTime, default=datetime.now)
+    last_name = db.Column(db.String(4096))
+    email_address = db.Column(db.String(4096))
+    student_major = db.Column(db.String(4096))
+    description = db.Column(db.String(4096), db.ForeignKey('description'))
+    value = db.Column(db.Float, db.ForeignKey('value'))
 
     commenter_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
     commenter = db.relationship('User', foreign_keys=commenter_id)
@@ -76,17 +77,18 @@ class Grade(db.Model)
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "GET":
-        return render_template("main_page.html", comments=Comment.query.all())
+        return render_template("main_page.html", students=Student.query.all())
 
     if not current_user.is_authenticated:
         return redirect(url_for('index'))
 
-    student = Student(first=request.form["contents"], assigner=current_user)
+    student = Student(first=request.form["Change Student"], assigner=current_user)
     db.session.add(student)
+    db.session.remove(student)                          
     db.session.commit()
     return redirect(url_for('index'))
                               
-    student = Student(first=request.form["contents"], assigner=current_user)
+    asssignments = Assignment(first=request.form["Change Assignment"], assigner=current_user)
     db.session.add(student)
     db.session.commit()
     return redirect(url_for('index'))
