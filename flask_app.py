@@ -54,7 +54,25 @@ class Student(db.Model):
     commenter_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
     commenter = db.relationship('User', foreign_keys=commenter_id)
    
-class 
+class Assignment(db.Model)
+
+    __tablename__ = "assignments"
+    
+    assignment_id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(4096))
+    assigner_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
+    assigner = db.relationship('User', foreign_keys=assigner_id)
+    
+class Grade(db.Model)
+
+    __tablename__ = "grades"
+    
+    grade_id = db.Column(db.Integer, primary_key=True)
+    value = db.Column(db.Float)
+    student_id = db.Column(db.Integer, db.ForeignKey('student_id')
+    assignment_id = db.Column(db.Integer, db.ForeignKey('assignment_id')                       
+                           
+                          
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "GET":
@@ -63,8 +81,13 @@ def index():
     if not current_user.is_authenticated:
         return redirect(url_for('index'))
 
-    comment = Comment(content=request.form["contents"], commenter=current_user)
-    db.session.add(comment)
+    student = Student(first=request.form["contents"], assigner=current_user)
+    db.session.add(student)
+    db.session.commit()
+    return redirect(url_for('index'))
+                              
+    student = Student(first=request.form["contents"], assigner=current_user)
+    db.session.add(student)
     db.session.commit()
     return redirect(url_for('index'))
 
