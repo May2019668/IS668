@@ -1,5 +1,5 @@
 Design
 The flask framework was used to design the grade book app it includes a login page with a protected password which  allows teachers to access the app. 
-After login you will be able to navigate the different forms via links which allow you to access different areas within  the gradebook such as the roster, adding/removing assignments, etc.  
-Python classes and objects  are  used 
+After login you will be able to query different students grades by  requesting an assignment  which allow you to access different areas within  the gradebook such as the roster, adding/removing assignments, etc.  
+Python classes and objects  are  used . a student classs, 
 In terms of the structure,  the data is stored in a  SQL database  with multiple tables with the Students, Assignments, Grades and Classrooms.  SQLAlchemy is used  to connect to the  SQL database in order to perform querying and editing tasks.
