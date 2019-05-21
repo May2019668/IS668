@@ -1,0 +1,23 @@
+{% extends "proj_layout.html" %}
+{% block content %}
+    {% for student in students %}
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Email</th>
+      <th scope="col">Major</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">{{ student.firstname }}</td>
+      <td>{{ student.lastname }}</td>
+      <td>{{ student.email }}</td>
+      <td>{{ student.major }}</td>
+    </tr>
+  </tbody>
+</table>
+    {% endfor %}
+{% endblock content %}
