@@ -1,12 +1,44 @@
+Gradebook Web App Project
+
 Project Responsibilities
-Cornelius: Basic structure design, Project description and Project  Testing
+Cornelius: Basic structure design, Project description and Project Testing
 Maureen: Project Description, enhancement of project design and Project Testing
 Collaboration was done throughout the project 
 
 
 Project Design
-The flask framework was used to design the gradebook app it includes a login page with a protected password, that can be accessed with a User  Name and Password. Python classes and objects  are  used .There are four classes -  AUser class, Student class, Assignment class and Grades class.
-In terms of the structure,  the data is stored in a  SQL database  with four tables which includes  the Students, Assignments, Grades and Student Report.  SQLAlchemy is used  to connect to the  SQL database in order to perform querying and editing tasks.
-Get and Post are used so that grades can be posted and retrieved. Average grades can be calculated by
-Once logged in  the student roster can be viewed and student information can be updated or  a student can be added or deleted.  Students assignments and grades can also be updated, added or deleted.
+The flask framework was used to design the gradebook app it includes a login page with a protected password – the passwords are “hash” and “salt”.  The web app is accessed by using a User Name and Password, the User is authenticated before being allowed to “login”. A User that is not authenticated will not be able to access the site.
+Python classes and objects are used. There are three classes - A User, Student class, Assignment class and Grades class.
+User class includes the following:
+•	User ID
+•	User Name
+•	User Password
+Student class Includes the following:
+•	Student ID
+•	Student first name
+•	Student last name
+•	Student Email address
+•	Student Major
+Assignment class includes the following:
+•	Assignment ID
+•	Description
+•	Assigner ID
+Grades class includes the following:
+•	Grade ID
+•	Value
+•	Student ID
+•	Assignment ID
+
+In terms of the structure, the data is stored in a SQL database with four tables which includes the Students data /profile, Assignments, Grades and Student Report.  SQLAlchemy is used to connect to the SQL database in order to perform querying and editing tasks.
+Bootstrap was used to design the front-end frame work with the use of HTML templates and CSS based design templates. 
+Once logged in on the dashboard of the gradebook the student roster will be viewed which includes the Students’ First name, Last name, Email address and Major. Also available on the dashboard are links to add a new student and to add assignments – once accesses the students’ data can be input to be added to the roster.  Students assignments and grades can also be updated, added or deleted. There is also a “Home” link to return to the home page after completing the chosen task.
+All the student’s assignments and grades were added to the database and SQL was used to retrieve the desired information
+Get and Post are used in the python code so that grades can be posted and retrieved. Average grades can be calculated by using the PHP calculator. Grades are calculated by first entering the Students’ ID and Last name, the Assignment / Assignments grades are then entered.  The average grade of the assignments is then calculated.  This calculator allows for up to five assignments to be entered and calculated.
+First Testing:
+•	The initial “login to the site was tested and was functional.
+•	Adding New student to the Student Roster was tested and was functional
+•	Adding New assignment to Gradebook was tested and was functional
+
+
+
 
