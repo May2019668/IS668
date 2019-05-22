@@ -1,0 +1,82 @@
+!DOCTYPE html>
+<html>
+<head>
+<title>Gradebook Web App Project</title>
+</head>
+<body>
+
+<h1>Summary</h1>
+<p> The Gradebook web app is designed to allow teachers to view their student roster and provides the following functionality .</p>
+<ul style="list-style-type:square;">
+<li>Display the student roster with the students first and last name, student ID, email address and students Major</li>
+<li>Add and delete students to and from a class</li>
+<li>Assignments with students grade</li>
+<li>Add and delete assignments</li>
+<li>Edit students grades</li>
+<li>Display students aggregate grades</li>
+</ul>  
+</br>
+<h2>Project Responsibilities</h2>
+<p>Cornelius: Basic structure design, Project description and Project Testing.</p>
+<p>Maureen: Project Description, enhancement of project design and Project Testing
+     Collaboration was done throughout the project .</p>
+</br>
+<h3>Project Design</h3>
+<p>The flask framework was used to design the gradebook app it includes a login page with a protected password , the passwords are hash and salt.  
+      The web app is accessed by using a User Name and Password, the User is authenticated before being allowed to login.
+      A User that is not authenticated will not be able to access the site.</p>
+<p>Python classes and objects are used. There are three classes - A User, Student class, Assignment class and Grades class.</p>
+<p>User class includes the following:</p>
+<ul style="list-style-type:square;">
+<li>User ID</li>
+<li>User Name</li>
+<li>User Password</li>
+</br>
+<p>Student class Includes the following:</p>
+<ul style="list-style-type:square;">
+<li>Student ID</li>
+<li>Student first name</li>
+<li>Student last name</li>
+<li>Student Email  Address</li>
+<li>Student Major</li>
+</br>
+<p>Assignment class includes the following:</p>
+<ul style="list-style-type:square;">
+<li>Assignment ID</li>
+<li>Description</li>
+<li>Assigner ID</li>
+<li>Student Email  Address</li>
+<li>Student Major</li>
+</br>
+<p>Grades class includes the following:</p>
+<ul style="list-style-type:square;">
+<li>Grade ID</li>
+<li>Value</li>
+<li>Student ID</li>
+<li>Assignment ID</li>
+</ul>
+</br>
+<p>In terms of the structure, the data is stored in a SQL database with four tables which includes the Students data /profile, Assignments, Grades and Student Report. 
+       SQLAlchemy is used to connect to the SQL database in order to perform querying and editing tasks.</p>
+</br>
+<p>Bootstrap was used to design the front-end frame work with the use of HTML templates and CSS based design templates. </p>
+<p>Once logged in on the dashboard of the gradebook the student roster will be viewed which includes the Students First name, Last name, Email address and Major. 
+       Also available on the dashboard are links to add a new student and to add assignments , once accesses the students data can be input to be added to the roster. 
+       Students assignments and grades can also be updated, added or deleted. There is also a Home link to return to the home page after completing the chosen task.</p>
+</br>
+<p>All the students assignments and grades were added to the database and SQL was used to retrieve the desired information.</p>
+<p>Get and Post are used in the python code so that grades can be posted and retrieved. 
+       Average grades can be calculated by using the PHP calculator. Grades are calculated by first entering the Students ID and Last name, the Assignment / Assignments grades are then entered. 
+      The average grade of the assignments is then calculated.  This calculator allows for up to five assignments to be entered and calculated.</p>
+</br>
+<h4>First Testing:</h4>
+<ul style="list-style-type:square;">
+<li>The initial login to the site was tested and was functional.</li>
+<li>Adding New student to the Student Roster was tested and was functional.</li>
+<li>Adding New assignment to Gradebook was tested and was functional.</li>
+</ul>
+
+
+
+</body>
+</html>
